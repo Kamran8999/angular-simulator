@@ -1,4 +1,5 @@
 export class Collection<T> {
+
   private items: T[] = [];
 
   getAllElements(): T[] {
@@ -20,4 +21,5 @@ export class Collection<T> {
   changeElement(index: number, changeItem: T): void {
     this.items[index] = changeItem;
   }
+
 };

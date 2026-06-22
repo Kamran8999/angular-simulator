@@ -6,21 +6,21 @@
         <span class="company-name fs-16 fw-700">{{ companyName }}</span>
       </div>
       <nav class="nav-header fs-18 fw-600">
-        <a>Главная</a>
-        <a>Про гида</a>
-        <a>Программа тура</a>
-        <a>Стоимость</a>
-        <a>Блог</a>
-        <a>Контакты</a>
+        <a id="nav-home">Главная</a>
+        <a id="nav-about-guide">Про гида</a>
+        <a id="nav-tour-program">Программа тура</a>
+        <a id="nav-price">Стоимость</a>
+        <a id="nav-blog">Блог</a>
+        <a id="nav-contacts">Контакты</a>
       </nav>
       <div class="consultation-button-container">
-        <button class="consultation-button fs-16 fw-600">Консультация</button>
+        <button class="consultation-button fs-16 fw-600" id="consultation-btn">Консультация</button>
       </div>
     </div>
   </div>
 </header>
 
-<section class="main-info ">
+<section class="main-info">
   <div class="banner"></div>
   <div class="title-main">
     <h1 class="text-title-main">Насладись прогулкой в горах <br>с командой единомышленников</h1>
@@ -31,7 +31,7 @@
         <select name="location-tour" id="location-tour-select" class="tour-search-form-line fs-16 fw-700">
           <option value="">Локация для тура</option>
         </select>
-        <label class="form-item-description fs-14" for="location-tour">выберите из списка</label>
+        <label class="form-item-description fs-14" for="location-tour-select">выберите из списка</label>
       </div>
       <div class="search-item">
         <input
@@ -40,16 +40,17 @@
           onfocus="(this.type='date')"
           onblur="if(!this.value)this.type='text'"
           name="trip-date"
-          class="tour-search-form-line fs-16">
-          <label class="form-item-description fs-14" for="trip-date">укажите дату</label>
+          class="tour-search-form-line fs-16"
+          id="trip-date-input">
+        <label class="form-item-description fs-14" for="trip-date-input">укажите дату</label>
       </div>
       <div class="search-item">
         <select name="participants" id="participants-select" class="tour-search-form-line fs-16 fw-700">
           <option value="">Участники</option>
         </select>
-        <label class="form-item-description fs-14" for="participants">выберите из списка</label>
+        <label class="form-item-description fs-14" for="participants-select">выберите из списка</label>
       </div>
-      <button class="search-program-button fs-16 fw-700">Найти программу </button>
+      <button class="search-program-button fs-16 fw-700" id="search-program-tour-btn">Найти программу </button>
     </form>
   </div>
 </section>

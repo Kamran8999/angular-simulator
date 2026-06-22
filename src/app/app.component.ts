@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import './training';
-import {Colors} from '../enums/Color';
+import {Color} from '../enums/Color';
 import './collection';
 
 @Component({
@@ -11,14 +11,17 @@ import './collection';
 })
 
 export class AppComponent {
+
   companyName: string = "РУМТИБЕТ";
-  constructor () {
+
+  constructor() {
     this.saveLastVisit();
-    this.getCountVisit();
+    this.countVisit();
   };
 
-  isMainColor(color: Colors): boolean {
-    return (color === Colors.redColor || color === Colors.greenColor || color === Colors.blueColor);
+  isMainColor(color: Color): boolean {
+    const colors = [Color.RED, Color.GREEN, Color.BLUE];
+    return (colors.includes(color))
   };
 
   saveLastVisit(): void {
@@ -26,16 +29,14 @@ export class AppComponent {
     localStorage.setItem('lastVisit', currentDate.toString());
   };
 
-  getCountVisit(): void {
-    let pageViewCount = localStorage.getItem('visitCount');
-    if (pageViewCount === null) {
-      pageViewCount = "0";
-    };
+  countVisit(): void {
+    let pageViewCount: string | null = localStorage.getItem('visitCount') ?? "0";
 
     const newVisitCount: number = +pageViewCount + 1;
 
     localStorage.setItem('visitCount', newVisitCount.toString());
   };
+
 };
 
 
