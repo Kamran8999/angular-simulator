@@ -16,12 +16,12 @@ export class AppComponent {
 
   constructor() {
     this.saveLastVisit();
-    this.countVisit();
+    this.saveVisitCount();
   };
 
   isMainColor(color: Color): boolean {
-    const colors = [Color.RED, Color.GREEN, Color.BLUE];
-    return (colors.includes(color))
+    const colors: Color[] = [Color.RED, Color.GREEN, Color.BLUE];
+    return colors.includes(color)
   };
 
   saveLastVisit(): void {
@@ -29,7 +29,7 @@ export class AppComponent {
     localStorage.setItem('lastVisit', currentDate.toString());
   };
 
-  countVisit(): void {
+  saveVisitCount(): void {
     let pageViewCount: string | null = localStorage.getItem('visitCount') ?? "0";
 
     const newVisitCount: number = +pageViewCount + 1;
